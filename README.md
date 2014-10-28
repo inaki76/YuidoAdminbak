@@ -1,4 +1,4 @@
-JazzyAdmin0
+YuidoAdmin
 ===========
 
 A Symfony2 model project intended to be a starting point for backend web application development
