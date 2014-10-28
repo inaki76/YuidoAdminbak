@@ -7,9 +7,9 @@ with sonataAdmin and FOSUser.
 Instalation
 -----------
 
-    git clone https://github.com/juanda/jazzyadmin0.git
+    git clone https://github.com/inaki76/YuidoAdmin.git
 
-    cd jazzyadmin0
+    cd Yuido
 
     php composer.phar install
 
