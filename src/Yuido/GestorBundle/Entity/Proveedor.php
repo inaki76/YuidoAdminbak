@@ -87,9 +87,9 @@ class Proveedor
     protected $gastosProveedor;
     
    /**
-     * @ORM\ManyToMany(targetEntity="Sprint", mappedBy="proveedores")
+     * @ORM\ManyToMany(targetEntity="historiaUsuario", mappedBy="proveedores")
      */
-    protected $sprints;
+    protected $historiasUsuario;
     
     /**
      * @ORM\OneToMany(targetEntity="FormacionProveedor", mappedBy="proveedor")
@@ -405,5 +405,38 @@ class Proveedor
     public function getFormacionProveedores()
     {
         return $this->formacionProveedores;
+    }
+
+    /**
+     * Add historiasUsuario
+     *
+     * @param \Yuido\GestorBundle\Entity\historiaUsuario $historiasUsuario
+     * @return Proveedor
+     */
+    public function addHistoriasUsuario(\Yuido\GestorBundle\Entity\historiaUsuario $historiasUsuario)
+    {
+        $this->historiasUsuario[] = $historiasUsuario;
+    
+        return $this;
+    }
+
+    /**
+     * Remove historiasUsuario
+     *
+     * @param \Yuido\GestorBundle\Entity\historiaUsuario $historiasUsuario
+     */
+    public function removeHistoriasUsuario(\Yuido\GestorBundle\Entity\historiaUsuario $historiasUsuario)
+    {
+        $this->historiasUsuario->removeElement($historiasUsuario);
+    }
+
+    /**
+     * Get historiasUsuario
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHistoriasUsuario()
+    {
+        return $this->historiasUsuario;
     }
 }

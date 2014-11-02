@@ -47,7 +47,7 @@ services:
         arguments:
             - null
             - Yuido\GestorBundle\Entity\Cliente
-            - nul
+            - null
                     
     sonata.admin.sprint:
         class: Yuido\GestorBundle\Admin\SprintAdmin
@@ -59,6 +59,15 @@ services:
             - null
         calls:
             - [ setTemplate, [edit, YuidoGestorBundle:Default:edit.html.twig]]
+     
+    sonata.admin.historiausuario:
+        class: Yuido\GestorBundle\Admin\HistoriaUsuarioAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: 'Historias de Usuario' }
+        arguments:
+            - null
+            - Yuido\GestorBundle\Entity\HistoriaUsuario
+            - null
             
     sonata.admin.visita:
         class: Yuido\GestorBundle\Admin\VisitaAdmin

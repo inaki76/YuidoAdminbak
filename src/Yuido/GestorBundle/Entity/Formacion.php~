@@ -508,4 +508,37 @@ class Formacion
     {
         return $this->formacionUsuarios;
     }
+
+    /**
+     * Add formacionProveedores
+     *
+     * @param \Yuido\GestorBundle\Entity\FormacionProveedor $formacionProveedores
+     * @return Formacion
+     */
+    public function addFormacionProveedore(\Yuido\GestorBundle\Entity\FormacionProveedor $formacionProveedores)
+    {
+        $this->formacionProveedores[] = $formacionProveedores;
+    
+        return $this;
+    }
+
+    /**
+     * Remove formacionProveedores
+     *
+     * @param \Yuido\GestorBundle\Entity\FormacionProveedor $formacionProveedores
+     */
+    public function removeFormacionProveedore(\Yuido\GestorBundle\Entity\FormacionProveedor $formacionProveedores)
+    {
+        $this->formacionProveedores->removeElement($formacionProveedores);
+    }
+
+    /**
+     * Get formacionProveedores
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFormacionProveedores()
+    {
+        return $this->formacionProveedores;
+    }
 }

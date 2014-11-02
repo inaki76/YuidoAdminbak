@@ -20,13 +20,15 @@ class Sprint
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
+    
+    
+     /**
      * @var string
      *
-     * @ORM\Column(name="tareas", type="text")
+     * @ORM\Column(name="nombre", type="string", length=255)
      */
-    private $tareas;
+    private $nombre;
+
 
     /**
      * @var \DateTime
@@ -71,24 +73,17 @@ class Sprint
      */
     protected $proyecto;
     
-    
-    /**
-     * @ORM\ManyToMany(targetEntity="Jazzyweb\UserBundle\Entity\User", inversedBy="sprints")
+   /**
+     * @ORM\OneToMany(targetEntity="HistoriaUsuario", mappedBy="sprint")
      */
-    protected $usuarios;
-    
-    /**
-     * @ORM\ManyToMany(targetEntity="Proveedor", inversedBy="sprints")
-     */
-    protected $proveedores;
-    
+    protected $historiasUsuario;
     ////////////////////////////////////////
     
     
     public function __toString()
     {
         //Error en Sonata si devuelve null, por eso tiene que devolver una cadena.
-        return $this->getTareas() ?: '';
+        return $this->getNombre() ?: '';
     }
     
     
@@ -103,28 +98,6 @@ class Sprint
         return $this->id;
     }
 
-    /**
-     * Set tareas
-     *
-     * @param string $tareas
-     * @return Sprint
-     */
-    public function setTareas($tareas)
-    {
-        $this->tareas = $tareas;
-    
-        return $this;
-    }
-
-    /**
-     * Get tareas
-     *
-     * @return string 
-     */
-    public function getTareas()
-    {
-        return $this->tareas;
-    }
 
     /**
      * Set fechaInicioSprint
@@ -336,5 +309,61 @@ class Sprint
     public function getProveedores()
     {
         return $this->proveedores;
+    }
+
+    /**
+     * Add historiasUsuario
+     *
+     * @param \Yuido\GestorBundle\Entity\HistoriaUsuario $historiasUsuario
+     * @return Sprint
+     */
+    public function addHistoriasUsuario(\Yuido\GestorBundle\Entity\HistoriaUsuario $historiasUsuario)
+    {
+        $this->historiasUsuario[] = $historiasUsuario;
+    
+        return $this;
+    }
+
+    /**
+     * Remove historiasUsuario
+     *
+     * @param \Yuido\GestorBundle\Entity\HistoriaUsuario $historiasUsuario
+     */
+    public function removeHistoriasUsuario(\Yuido\GestorBundle\Entity\HistoriaUsuario $historiasUsuario)
+    {
+        $this->historiasUsuario->removeElement($historiasUsuario);
+    }
+
+    /**
+     * Get historiasUsuario
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHistoriasUsuario()
+    {
+        return $this->historiasUsuario;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Sprint
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
     }
 }

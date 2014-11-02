@@ -38,42 +38,42 @@ class Cliente
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telefono", type="string", length=255)
+     * @ORM\Column(name="telefono", type="string", length=255, nullable=true)
      */
     private $telefono;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telefono2", type="string", length=255)
+     * @ORM\Column(name="telefono2", type="string", length=255, nullable=true)
      */
     private $telefono2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="direccion", type="string", length=255)
+     * @ORM\Column(name="direccion", type="string", length=255, nullable=true)
      */
     private $direccion;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="url_web", type="string", length=255)
+     * @ORM\Column(name="url_web", type="string", length=255, nullable=true)
      */
     private $urlWeb;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="actividad", type="string", length=255)
+     * @ORM\Column(name="actividad", type="string", length=255, nullable=true)
      */
     private $actividad;
 

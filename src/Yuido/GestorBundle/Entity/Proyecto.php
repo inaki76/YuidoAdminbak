@@ -38,7 +38,7 @@ class Proyecto
     /**
      * @var string
      *
-     * @ORM\Column(name="codigoPresu", type="string", length=255)
+     * @ORM\Column(name="codigoPresu", type="string", nullable=true, length=255)
      */
     private $codigoPresu;
     
@@ -81,7 +81,7 @@ class Proyecto
     /**
      * @var integer
      *
-     * @ORM\Column(name="importe", type="integer")
+     * @ORM\Column(name="importe", nullable=true, type="integer")
      */
     private $importe;
     

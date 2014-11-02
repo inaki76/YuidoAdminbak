@@ -20,9 +20,9 @@ class User extends BaseUser
     
     
     /**
-     * @ORM\ManyToMany(targetEntity="Yuido\GestorBundle\Entity\Sprint", mappedBy="usuarios")
+     * @ORM\ManyToMany(targetEntity="Yuido\GestorBundle\Entity\HistoriaUsuario", mappedBy="usuarios")
      */
-    protected $sprints;
+    protected $historiasUsuario;
     
     /**
      * @ORM\OneToMany(targetEntity="Yuido\GestorBundle\Entity\Visita", mappedBy="usuario")

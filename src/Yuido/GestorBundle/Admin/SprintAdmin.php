@@ -22,9 +22,7 @@ class SprintAdmin extends Admin{
                
         $formMapper
             ->add('proyecto')
-            ->add('usuarios', null, array('label' => 'Usuario'))
-
-            ->add('tareas', null, array('label' => 'Tareas'))
+            ->add('nombre', null, array('label' => 'Nombre'))
             ->add('fechaInicioSprint', 'datetime', array(
                 'label' => 'Fecha Inicio Sprint',
                 'widget' => 'single_text',
@@ -64,7 +62,7 @@ class SprintAdmin extends Admin{
     {
         $datagridMapper
             ->add('proyecto')
-            ->add('tareas', null, array('label' => 'Tareas'))
+            ->add('nombre', null, array('label' => 'Sprint'))
             ->add('exito', null, array('label' => 'Exito Sprint')) ;
     }
 
@@ -73,13 +71,12 @@ class SprintAdmin extends Admin{
     {
         $listMapper
             ->add('proyecto')
-            ->add('tareas', null, array('label' => 'Tareas'))
+            ->add('nombre', null, array('label' => 'Nombre'))
             ->add('fechaInicioSprint', null, array('label' => 'Fecha Inicio Sprint'))
             ->add('fechaFinSprint', null, array('label' => 'Fecha Fin Sprint'))
-            ->add('fechaFin', null, array('label' => 'Fecha Fin Tarea'))
+            ->add('fechaFin', null, array('label' => 'Fin Historias Usuario'))
             ->add('observaciones', null, array('label' => 'Observaciones'))
             ->add('exito', null, array('label' => 'Exito'))
-            ->add('usuarios')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),

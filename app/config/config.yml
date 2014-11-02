@@ -50,6 +50,7 @@ sonata_admin:
         items:
             - sonata.admin.proyecto
             - sonata.admin.sprint
+            - sonata.admin.historiausuario
             - sonata.admin.cliente
             - sonata.admin.visita
             - sonata.admin.documentacion
